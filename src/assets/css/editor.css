@@ -1,0 +1,33 @@
+.tiptap-editor {
+    @apply border rounded-lg bg-white dark:bg-gray-900
+    p-4 focus-within:ring-2 ring-blue-500/50;
+    min-height: 16rem;
+}
+
+.tiptap-content {
+    @apply prose prose-sm sm:prose lg:prose-lg
+    max-w-none
+    dark:prose-invert;
+}
+
+.tiptap-content h1   { @apply mt-0 text-3xl font-bold; }
+.tiptap-content h2   { @apply mt-6 text-2xl font-semibold; }
+.tiptap-content ul   { @apply list-disc pl-6; }
+.tiptap-content ol   { @apply list-decimal pl-6; }
+
+.tiptap-content pre  { @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto whitespace-pre; }
+.tiptap-content code { @apply bg-gray-100 dark:bg-gray-800 px-1 rounded; }
+
+.tiptap-content blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 dark:text-gray-300;
+}
+
+.tiptap-content img   { @apply rounded-md mx-auto; }
+.tiptap-content table { @apply w-full text-left border-collapse; }
+.tiptap-content th,
+.tiptap-content td    { @apply border px-3 py-2 dark:border-gray-700; }
+
+.ProseMirror p.is-empty::before {
+    content: attr(data-placeholder);
+    @apply text-gray-400 italic pointer-events-none;
+}

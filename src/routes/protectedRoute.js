@@ -1,14 +1,16 @@
 import {Authenticated, Unauthenticated} from "convex/react";
-import {Navigate} from "react-router-dom";
+import {Navigate, Outlet, useLocation} from "react-router-dom";
 
-export default function ProtectedRoute({ children }) {
+export default function ProtectedRoute() {
+    const location = useLocation()
     return (
         <>
-            <Authenticated>{children}</Authenticated>
+            <Authenticated>
+                {location.pathname === '/' ? <Navigate to="/dashboard" /> : <Outlet /> }
+            </Authenticated>
 
-            {/* Nếu chưa đăng nhập ⇒ chuyển hướng đến trang /sign-in */}
             <Unauthenticated>
-                <Navigate to="/sign-in" replace />
+                <Navigate to="/" replace />
             </Unauthenticated>
         </>
     );
