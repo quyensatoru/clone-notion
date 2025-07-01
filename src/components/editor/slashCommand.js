@@ -6,25 +6,35 @@ import CommandMenu from "./slashMenu"
 
 const COMMANDS = [
     {
-        title: 'Heading 1',
+        title: 'Heading 1',
         icon: 'H1',
-        // ❶ xoá chuỗi `/…`, ❷ chuyển block, ❸ chèn khoảng trắng để có chỗ gõ
         command: ({ editor, range }) =>
             editor
                 .chain()
-                .focus()                      // trả focus  :contentReference[oaicite:1]{index=1}
-                .deleteRange(range)           // xoá trigger  :contentReference[oaicite:2]{index=2}
+                .focus()
+                .deleteRange(range)
                 .setNode('heading', { level: 1 })
-                .insertContent(' ')           // để con trỏ nằm trong heading
+                .insertContent(' ')
                 .run(),
     },
     {
-        title: 'Bullet List',
+        title: 'Heading 2',
+        icon: 'H2',
+        command: ({ editor, range }) =>
+            editor
+                .chain()
+                .focus()
+                .deleteRange(range)
+                .setNode('heading', { level: 2 })
+                .insertContent(' ')
+                .run(),
+    },
+    {
+        title: 'Bullet List',
         icon: '•',
         command: ({ editor, range }) =>
             editor.chain().focus().deleteRange(range).toggleBulletList().run(),
     },
-    // … các lệnh khác
 ]
 
 export const SlashCommandExtension = Extension.create({
@@ -71,7 +81,7 @@ export const SlashCommandExtension = Extension.create({
     addProseMirrorPlugins() {
         return [
             Suggestion({
-                editor: this.editor,               // ← FIXED
+                editor: this.editor,
                 ...this.options.suggestion,
             }),
         ]
