@@ -6,7 +6,7 @@ import "../../assets/css/editor.css";
 export default function Editor() {
     const editor = useEditor({
         extensions: [StarterKit,SlashCommandExtension],
-        content: '<p>Gõ “/” để mở menu</p><p></p>',
+        content: '<div>Gõ “/” để mở menu</div>',
     });
 
     if(!editor) return null;

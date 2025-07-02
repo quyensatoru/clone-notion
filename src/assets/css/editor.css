@@ -1,13 +1,21 @@
 .tiptap-editor {
-    @apply border rounded-lg bg-white dark:bg-gray-900
-    p-4 focus-within:ring-2 ring-blue-500/50;
+    @apply bg-white dark:bg-gray-900 flex justify-center items-center
+    p-4 ring-blue-500/50;
     min-height: 16rem;
 }
 
 .tiptap-content {
-    @apply prose prose-sm sm:prose lg:prose-lg
-    max-w-none
+    @apply prose prose-sm sm:prose lg:prose-lg min-w-[50%]
     dark:prose-invert;
+}
+
+.tiptap {
+    @apply px-2 py-1 focus-visible:border-none overflow-auto max-h-[95vh];
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.tiptap::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .tiptap-content h1   { @apply mt-0 text-3xl font-bold; }

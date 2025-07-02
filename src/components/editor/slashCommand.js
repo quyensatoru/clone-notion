@@ -35,6 +35,12 @@ const COMMANDS = [
         command: ({ editor, range }) =>
             editor.chain().focus().deleteRange(range).toggleBulletList().run(),
     },
+    {
+        title: 'Code',
+        icon: '<>',
+        command: ({ editor, range }) =>
+            editor.chain().focus().deleteRange(range).toggleCode().run(),
+    },
 ]
 
 export const SlashCommandExtension = Extension.create({
