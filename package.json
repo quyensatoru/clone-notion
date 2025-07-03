@@ -15,6 +15,7 @@
     "@tiptap/core": "^2.23.0",
     "@tiptap/extension-color": "^2.22.3",
     "@tiptap/extension-list-item": "^2.22.3",
+    "@tiptap/extension-placeholder": "^2.24.0",
     "@tiptap/extension-text-style": "^2.22.3",
     "@tiptap/pm": "^2.22.3",
     "@tiptap/react": "^2.22.3",

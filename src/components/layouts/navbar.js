@@ -17,8 +17,8 @@ export default function NavigateBar() {
     const user = users[0];
 
     return (
-        <div className="flex flex-row bg-white dark:bg-gray-900">
-            <div className="h-screen w-60 bg-[#1e1e1e] text-white py-4 px-2 flex flex-col gap-4 border-r border-[#2a2a2a]">
+        <div className="flex flex-row bg-white dark:bg-[#191919]">
+            <div className="h-screen w-60 bg-[#202020] text-white py-4 px-2 flex flex-col gap-4 border-r border-[#2a2a2a]">
                 {/* Workspace Header */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
